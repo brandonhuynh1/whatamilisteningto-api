@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/brandonhuynh1/whatamilisteningto-api/internal/services"
@@ -198,7 +199,8 @@ func (h *trackHandler) getTrackHistory(c *gin.Context) {
 	// Get limit from query parameters, default to 10
 	limit := 10
 	if limitParam := c.Query("limit"); limitParam != "" {
-		if parsedLimit, err := c.Params.Get("limit"); err == nil {
+		// Convert string to int properly
+		if parsedLimit, err := strconv.Atoi(limitParam); err == nil {
 			limit = parsedLimit
 		}
 	}

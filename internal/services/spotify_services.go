@@ -11,7 +11,7 @@ import (
 	"github.com/brandonhuynh1/whatamilisteningto-api/internal/database"
 	"github.com/brandonhuynh1/whatamilisteningto-api/internal/models"
 	"github.com/brandonhuynh1/whatamilisteningto-api/pkg/spotify"
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
 	"github.com/jmoiron/sqlx"
 	"github.com/rs/zerolog"
 )
